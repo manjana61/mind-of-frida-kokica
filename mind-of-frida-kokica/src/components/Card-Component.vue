@@ -1,7 +1,9 @@
 <template>
-  <div class="card">CARD</div>
+  <div class="card"></div>
 </template>
 
-<script></script>
+<script>
+export default {};
+</script>
 
 <style></style>

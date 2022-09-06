@@ -6,6 +6,7 @@
         v-for="(card, index) in cardList"
         :key="card.id"
         :index="index"
+        :value="card"
       />
     </div>
   </header>
@@ -50,5 +51,6 @@ h1 {
   grid-template-rows: 100px 100px 100px 100px;
   grid-row-gap: 30px;
   justify-content: center;
+  text-align: center;
 }
 </style>
