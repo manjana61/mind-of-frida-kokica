@@ -15,7 +15,7 @@ export default {
   },
   visible: {
     type: Boolean,
-    default: false,
+    default: false, // Da li sam ovo dobro definisao?
   },
 };
 </script>
