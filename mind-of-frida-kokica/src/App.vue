@@ -2,27 +2,14 @@
   <header>
     <h1>Mind of Frida Kokica</h1>
     <div class="game-board">
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
+      <Card />
     </div>
   </header>
 </template>
 
-<script setup></script>
+<script setup>
+import Card from "./components/Card.vue";
+</script>
 
 <style scoped>
 h1 {
