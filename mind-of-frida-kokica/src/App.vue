@@ -5,7 +5,6 @@
       <CardComponent
         v-for="(card, index) in cardList"
         :key="card.id"
-        :index="index"
         :value="index"
       />
     </div>
