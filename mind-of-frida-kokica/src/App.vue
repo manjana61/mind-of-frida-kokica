@@ -2,7 +2,11 @@
   <header>
     <h1>Mind of Frida Kokica</h1>
     <div class="game-board">
-      <CardComponent v-for="card in cardList" :key="card.id" />
+      <CardComponent
+        v-for="(card, index) in cardList"
+        :key="card.id"
+        :index="index"
+      />
     </div>
   </header>
 </template>
