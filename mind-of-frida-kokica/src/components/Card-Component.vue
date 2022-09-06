@@ -1,9 +1,16 @@
 <template>
-  <div class="card"></div>
+  <div class="card">{{ value }}</div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    value: {
+      type: Number,
+      required: true,
+    },
+  },
+};
 </script>
 
 <style></style>

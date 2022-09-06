@@ -6,7 +6,7 @@
         v-for="(card, index) in cardList"
         :key="card.id"
         :index="index"
-        :value="card"
+        :value="index"
       />
     </div>
   </header>
@@ -22,7 +22,7 @@ export default {
     CardComponent,
   },
 
-  data() {
+  setup() {
     let cardList = [];
     for (let i = 0; i < 16; i++) {
       cardList.push(i);
