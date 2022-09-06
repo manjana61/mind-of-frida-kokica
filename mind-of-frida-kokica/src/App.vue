@@ -2,13 +2,32 @@
   <header>
     <h1>Mind of Frida Kokica</h1>
     <div class="game-board">
-      <Card />
+      <CardComponent v-for="card in cardList" :key="card.id" />
     </div>
   </header>
 </template>
 
-<script setup>
-import Card from "./components/Card.vue";
+<script>
+import CardComponent from "./components/Card-component.vue";
+
+export default {
+  name: "App",
+
+  components: {
+    CardComponent,
+  },
+
+  data() {
+    let cardList = [];
+    for (let i = 0; i < 16; i++) {
+      cardList.push(i);
+    }
+
+    return {
+      cardList,
+    };
+  },
+};
 </script>
 
 <style scoped>
