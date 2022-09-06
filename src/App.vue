@@ -21,7 +21,7 @@ export default {
     CardComponent,
   },
 
-  setup() {
+  data() {
     let cardList = [];
     for (let i = 0; i < 16; i++) {
       cardList.push(i);
@@ -38,11 +38,6 @@ export default {
 h1 {
   text-align: center;
 }
-
-.card {
-  border: 5px solid black;
-}
-
 .game-board {
   display: grid;
   grid-template-columns: 100px 100px 100px 100px;
@@ -51,5 +46,6 @@ h1 {
   grid-row-gap: 30px;
   justify-content: center;
   text-align: center;
+  margin-top: 30px;
 }
 </style>
