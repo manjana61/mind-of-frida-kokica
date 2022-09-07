@@ -9,7 +9,7 @@
         :visible="card.visible"
         :position="card.position"
         @select-card="flipCard"
-      />
+      /> <!-- Da li je ok ovako da hvata event? Ovaj event sam definisao u Card-Component.vue -->
     </div>
   </header>
 </template>
@@ -25,11 +25,11 @@ export default {
     CardComponent,
   },
 
-  setup() {
+  setup() { /* Ovde sam ubacio setup() function */
     let cardList = ref([])
 
     for (let i = 0; i < 16; i++) {
-      cardList.value.push({
+      cardList.value.push({ /* Da li sam ovde okej iskucao? */
         value: i,
         visible: false,
         position: i,
@@ -37,10 +37,10 @@ export default {
     }
 
     let flipCard = (info) => {
-      cardList.value[info.position.visible] = true
+      cardList.value[info.position.visible] = true /* Da li sam i ovde dobro iskucao? */
     }
 
-    return {
+    return { /* Na netu sam nasao na vuejs.org da kad koristim setup() da moram da imam return. */
       cardList,
       flipCard
     }
