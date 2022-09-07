@@ -1,5 +1,5 @@
 <template>
-  <div class="card" @click="selectCard"> <!-- Ovde sam napravio event za klik. -->
+  <div class="card" @click="selectCard">
     <div v-if="visible" class="card-side is-front">{{ value }}</div>
     <div v-else class="card-side is-back">Back</div>
   </div>
@@ -25,7 +25,7 @@ export default {
     },
   },
 
-  setup(props, context) { /* Ovde sam ubacio setup() function */
+  setup(props, context) {
     let selectCard = () => {
       context.emit('select-card', {
         position: props.position,
