@@ -37,7 +37,7 @@ export default {
     }
 
     let flipCard = (info) => {
-      cardList.value[info.position.visible] = true /* Da li sam i ovde dobro iskucao? */
+      cardList.value[info.position].visible = true /* OVDE JE BILA GLUPA GRESKA PONOVO ........... ] ova zagrada mi je bila posle visible..... */
     }
 
     return { /* Na netu sam nasao na vuejs.org da kad koristim setup() da moram da imam return. */
