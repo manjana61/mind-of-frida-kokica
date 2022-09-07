@@ -24,18 +24,18 @@ export default {
   },
 
   data() {
-    let cardList = [];
+    return {
+      cardList: [],
+    };
+  },
 
+  created() {
     for (let i = 0; i < 16; i++) {
-      cardList.push({
+      this.cardList.push({
         value: i,
-        visible: true, //Ovo je broj 2. Znaci, zelim da kada mi je vrednost od visible true, da mi kartice budu crvene (znaci licem na gore), a kada je vrednost false da budu licem na dole.
+        visible: false, //Ovo je broj 2. Znaci, zelim da kada mi je vrednost od visible true, da mi kartice budu crvene (znaci licem na gore), a kada je vrednost false da budu licem na dole.
       });
     }
-
-    return {
-      cardList,
-    };
   },
 };
 </script>

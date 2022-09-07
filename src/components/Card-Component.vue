@@ -12,10 +12,11 @@ export default {
       type: Number,
       required: true,
     },
-  },
-  visible: {
-    type: Boolean,
-    default: false, // Da li sam ovo dobro definisao?
+
+    visible: {
+      type: Boolean,
+      default: false, // Da li sam ovo dobro definisao?
+    },
   },
 };
 </script>
