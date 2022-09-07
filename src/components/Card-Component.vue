@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" @click="selectCard">
     <div v-if="visible" class="card-side is-front">{{ value }}</div>
     <div v-else class="card-side is-back">Back</div>
   </div>
@@ -7,7 +7,13 @@
 
 <script>
 export default {
+  
   props: {
+    position: {
+      type: Number,
+      required: true,
+    },
+
     value: {
       type: Number,
       required: true,
@@ -15,9 +21,21 @@ export default {
 
     visible: {
       type: Boolean,
-      default: false, // Da li sam ovo dobro definisao?
+      default: false,
     },
   },
+
+  setup(props, context) {
+    let selectCard = () => {
+      context.emit('select-card', {
+        position: props.position,
+      })
+    }
+
+    return {
+      selectCard
+    }
+  }
 };
 </script>
 

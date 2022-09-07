@@ -7,13 +7,15 @@
         :key="index"
         :value="card.value"
         :visible="card.visible"
+        :position="card.position"
+        @select-card="flipCard"
       />
-      <!-- 1. Ovde mi nije jasno kako da povezem sa brojem 2. Gledao sam snimke i guglao, ali nisam resio problem. Verovatno sam nesto izostavio, ili neka glupa greska.-->
     </div>
   </header>
 </template>
 
 <script>
+import { ref } from 'vue'
 import CardComponent from "./components/Card-component.vue";
 
 export default {
@@ -23,18 +25,24 @@ export default {
     CardComponent,
   },
 
-  data() {
-    return {
-      cardList: [],
-    };
-  },
+  setup() {
+    let cardList = ref([])
 
-  created() {
     for (let i = 0; i < 16; i++) {
-      this.cardList.push({
+      cardList.value.push({
         value: i,
-        visible: false, //Ovo je broj 2. Znaci, zelim da kada mi je vrednost od visible true, da mi kartice budu crvene (znaci licem na gore), a kada je vrednost false da budu licem na dole.
-      });
+        visible: false,
+        position: i,
+      })
+    }
+
+    let flipCard = (info) => {
+      cardList.value[info.position.visible] = true
+    }
+
+    return {
+      cardList,
+      flipCard
     }
   },
 };
