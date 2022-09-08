@@ -5,6 +5,7 @@
       <CardComponent
         v-for="(card, index) in cardList"
         :key="index"
+        :matched="card.matched"
         :value="card.value"
         :visible="card.visible"
         :position="card.position"
@@ -36,6 +37,7 @@ export default {
         value: i,
         visible: false,
         position: i,
+        matched: false,
       })
     }
 
@@ -59,6 +61,9 @@ export default {
 
         if (firstCard.faceValue === secondCard.faceValue) {
           status.value = 'Match!'
+
+          cardList.value[firstCard.position].matched = true
+          cardList.value[secondCard.position].matched = true
         } else {
           status.value = 'Mismatch.'
 
