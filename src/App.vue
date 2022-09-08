@@ -39,7 +39,7 @@ export default {
     }
 
     let flipCard = (dataInfo) => {
-      cardList.value[dataInfo.position].visible = true /* OVDE JE BILA GLUPA GRESKA PONOVO ........... ] ova zagrada mi je bila posle visible..... */
+      cardList.value[dataInfo.position].visible = true
     
       if (userSelection.value[0]) {
         userSelection.value[1] = dataInfo
@@ -52,10 +52,7 @@ export default {
     watch(
       userSelection, 
       (currentValue) => {
-      console.log(currentValue)
-
       if (currentValue.length === 2) {
-        console.log("GG WP")
         userSelection.value.length = 0
       }
     },
