@@ -53,6 +53,12 @@ export default {
       userSelection, 
       (currentValue) => {
       if (currentValue.length === 2) {
+        let firstCard = currentValue[0]
+        let secondCard = currentValue[1]
+
+        cardList.value[firstCard.position].visible = false
+        cardList.value[secondCard.position].visible = false
+
         userSelection.value.length = 0
       }
     },
