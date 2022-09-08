@@ -11,7 +11,7 @@
         @select-card="flipCard"
       />
     </div>
-    <h2>{{userSelection}}</h2>
+    <h2>{{ status }}</h2>
   </header>
 </template>
 
@@ -29,6 +29,7 @@ export default {
   setup() {
     let cardList = ref([])
     let userSelection = ref([])
+    let status = ref('')
 
     for (let i = 0; i < 16; i++) {
       cardList.value.push({
@@ -56,6 +57,12 @@ export default {
         let firstCard = currentValue[0]
         let secondCard = currentValue[1]
 
+        if (firstCard.faceValue === secondCard.faceValue) {
+          status.value = 'Match!'
+        } else {
+          status.value = 'Mismatch.'
+        }
+
         cardList.value[firstCard.position].visible = false
         cardList.value[secondCard.position].visible = false
 
@@ -69,6 +76,7 @@ export default {
       cardList,
       flipCard,
       userSelection,
+      status,
     }
   },
 };
