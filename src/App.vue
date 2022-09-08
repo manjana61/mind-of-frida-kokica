@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import CardComponent from "./components/Card-component.vue";
 
 export default {
@@ -48,6 +48,19 @@ export default {
       }
     
     }
+
+    watch(
+      userSelection, 
+      (currentValue) => {
+      console.log(currentValue)
+
+      if (currentValue.length === 2) {
+        console.log("GG WP")
+        userSelection.value.length = 0
+      }
+    },
+      {deep: true} //deep watch (track/watch the deep values inside of watch)?
+    )
 
     return { 
       cardList,
