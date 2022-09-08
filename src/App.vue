@@ -61,10 +61,10 @@ export default {
           status.value = 'Match!'
         } else {
           status.value = 'Mismatch.'
-        }
 
-        cardList.value[firstCard.position].visible = false
-        cardList.value[secondCard.position].visible = false
+          cardList.value[firstCard.position].visible = false
+          cardList.value[secondCard.position].visible = false
+        }
 
         userSelection.value.length = 0
       }
