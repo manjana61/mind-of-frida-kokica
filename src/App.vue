@@ -13,7 +13,6 @@
       />
     </div>
     <h2>{{ status }}</h2>
-    <p>Remaining Pairs: {{ remainingPairs }}</p>
   </header>
 </template>
 
@@ -31,7 +30,14 @@ export default {
   setup() {
     let cardList = ref([])
     let userSelection = ref([])
-    let status = ref('')
+
+    let status = computed(() => {
+      if (remainingPairs.value === 0) {
+        return 'YOU WIN !'
+      } else {
+        return `Remaining Pairs : ${remainingPairs.value}`
+      }
+    })
 
     let remainingPairs = computed (() => {
       let remainingCards = cardList.value.filter(card => card.matched === false).length
@@ -89,7 +95,6 @@ export default {
       flipCard,
       userSelection,
       status,
-      remainingPairs,
     }
   },
 };
