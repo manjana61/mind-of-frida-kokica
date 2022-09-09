@@ -13,10 +13,12 @@
       />
     </div>
     <h2>{{ status }}</h2>
+    <button @click="shuffleCards">Shuffle Cards</button>
   </header>
 </template>
 
 <script>
+import _ from 'lodash'
 import { ref, watch, computed } from 'vue'
 import CardComponent from "./components/Card-component.vue";
 
@@ -44,6 +46,10 @@ export default {
 
       return remainingCards / 2
     })
+
+    let shuffleCards = () => {
+      cardList.value = _.shuffle(cardList.value)
+    }
 
     for (let i = 0; i < 16; i++) {
       cardList.value.push({
@@ -95,6 +101,7 @@ export default {
       flipCard,
       userSelection,
       status,
+      shuffleCards,
     }
   },
 };
