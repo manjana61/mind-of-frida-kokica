@@ -13,11 +13,12 @@
       />
     </div>
     <h2>{{ status }}</h2>
+    <p>Remaining Pairs: {{ remainingPairs }}</p>
   </header>
 </template>
 
 <script>
-import { ref, watch } from 'vue'
+import { ref, watch, computed } from 'vue'
 import CardComponent from "./components/Card-component.vue";
 
 export default {
@@ -31,6 +32,12 @@ export default {
     let cardList = ref([])
     let userSelection = ref([])
     let status = ref('')
+
+    let remainingPairs = computed (() => {
+      let remainingCards = cardList.value.filter(card => card.matched === false).length
+
+      return remainingCards / 2
+    })
 
     for (let i = 0; i < 16; i++) {
       cardList.value.push({
@@ -74,7 +81,7 @@ export default {
         userSelection.value.length = 0
       }
     },
-      {deep: true} //deep watch (track/watch the deep values inside of watch)?
+      { deep: true } //deep watch (track/watch the deep values inside of watch)?
     )
 
     return { 
@@ -82,6 +89,7 @@ export default {
       flipCard,
       userSelection,
       status,
+      remainingPairs,
     }
   },
 };
