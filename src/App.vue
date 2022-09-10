@@ -64,14 +64,30 @@ export default {
       })
     }
 
-    for (let i = 0; i < 16; i++) {
+    let cardItems = [1, 2, 3, 4, 5, 6, 7, 8]
+
+    cardItems.forEach(item => {
       cardList.value.push({
-        value: i,
+        value: item,
         visible: false,
-        position: i,
+        position: null,
         matched: false,
       })
-    }
+
+      cardList.value.push({
+        value: item,
+        visible: false,
+        position: null,
+        matched: false,
+      })
+    })
+
+    cardList.value = cardList.value.map((card, index) => {
+      return {
+        ...card,
+        position: index,
+      }
+    })
 
     let flipCard = (dataInfo) => {
       cardList.value[dataInfo.position].visible = true

@@ -1,6 +1,6 @@
 <template>
   <div class="card" @click="selectCard">
-    <div v-if="visible" class="card-side is-front">{{ value }} - {{ matched }}</div>
+    <div v-if="visible" class="card-side is-front">{{ value }} - {{ position }}</div>
     <div v-else class="card-side is-back">Back</div>
   </div>
 </template>
