@@ -89,15 +89,19 @@ export default {
       }
     })
 
-    let flipCard = (dataInfo) => {
+    let flipCard = (dataInfo) => { // problem googled.
       cardList.value[dataInfo.position].visible = true
     
       if (userSelection.value[0]) {
-        userSelection.value[1] = dataInfo
+        if (userSelection.value[0].position === dataInfo.position && // Had a problem with card matching with itself when I doubleclicked on it. It was a pain in the a**, but after a lot of googling I found a fix.... 
+        userSelection.value[0].faceValue === dataInfo.faceValue) {
+          return
+        } else {
+          userSelection.value[1] = dataInfo
+        }
       } else {
         userSelection.value[0] = dataInfo
       }
-    
     }
 
     watch(
@@ -120,7 +124,7 @@ export default {
         userSelection.value.length = 0
       }
     },
-      { deep: true } //deep watch (track/watch the deep values inside of watch)?
+      { deep: true } //deep watch (track/watch the deep values inside of watch)? * problem googled.
     )
 
     return { 
