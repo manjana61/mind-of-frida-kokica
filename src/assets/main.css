@@ -2,11 +2,11 @@
 
 #app {
   margin: 0 auto;
-  padding-top: 10px;
+  padding-top: 50px;
   text-align: center;
   font-weight: normal;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: #000;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Moram da odradim bolji font velicinu */
+  color: rgb(187, 226, 239);
   background-image: url('/images/background.jpg');
   background-color: antiquewhite;
   background-position: center;

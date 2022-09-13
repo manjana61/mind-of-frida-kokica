@@ -139,7 +139,7 @@ export default {
 };
 </script>
 
-<style scoped> /* u main.css #app odradjen jedan deo css-a */
+<style scoped> /* u main.css #app odradjen jedan deo css-a. Nisam uspeo drugacije da ubacim background image za pozadinu. */
 * {
   box-sizing: border-box;
   text-align: center;
@@ -152,12 +152,11 @@ body {
 
 .game-board {
   display: grid;
-  grid-template-columns: 100px 100px 100px 100px;
-  grid-column-gap: 30px;
-  grid-template-rows: 100px 100px 100px 100px;
-  grid-row-gap: 30px;
+  grid-template-columns: repeat(4, 120px);
+  grid-column-gap: 24px;
+  grid-template-rows: repeat(4, 120px);
+  grid-row-gap: 24px;
   justify-content: center;
   text-align: center;
-  margin-top: 30px;
 }
 </style>

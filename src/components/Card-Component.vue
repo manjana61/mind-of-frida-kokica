@@ -1,7 +1,10 @@
 <template>
   <div class="card" @click="selectCard">
-    <div v-if="visible" class="card-side is-front">{{ value }} - {{ position }}</div>
-    <div v-else class="card-side is-back">Back</div>
+    <div v-if="visible" class="card-side is-front">
+      {{ value }}
+      <img v-if="matched" src="/images/matching-checkmark.png" class="matching" />
+    </div>
+    <div v-else class="card-side is-back"></div>
   </div>
 </template>
 
@@ -47,7 +50,6 @@ export default {
 
 <style scoped>
 .card {
-  border: 5px solid gray;
   position: relative;
 }
 
@@ -55,9 +57,12 @@ export default {
   width: 100%;
   height: 100%;
   position: absolute;
+  border: 1px solid rgb(34, 34, 34);
+  border-radius: 10px;
 }
+
 .card-side.is-front {
-  background-color: red;
+  background-color: red; /* Ovo treba da uradim, da ubacim pozadinu ili slike. */
   color: white;
 }
 
@@ -67,5 +72,13 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
+}
+
+.matching {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 30%;
+  height: auto;
 }
 </style>
