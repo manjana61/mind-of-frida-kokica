@@ -1,7 +1,7 @@
 <template>
   <div class="card" @click="selectCard">
     <div v-if="visible" class="card-side is-front">
-      <img :src="`/images/${value}.jpeg`" :alt="value"> <!-- Guglao, zabrljao sam se bio, dosta vremena mi je otislo ovde. Sve sto je trebalo da uradim je bio bind na src i alt. -->
+      <img :src="`/images/${value}.png`" :alt="value"> <!-- Guglao, zabrljao sam se bio, dosta vremena mi je otislo ovde. Sve sto je trebalo da uradim je bio bind na src i alt. -->
       <img v-if="matched" src="/images/matching-checkmark.png" class="matching" />
     </div>
     <div v-else class="card-side is-back"></div>
