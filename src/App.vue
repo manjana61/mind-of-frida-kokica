@@ -64,7 +64,16 @@ export default {
       })
     }
 
-    let cardItems = [1, 2, 3, 4, 5, 6, 7, 8]
+    let cardItems = [
+      'mom', 
+      'eat', 
+      'sleep', 
+      'poop', 
+      'play', 
+      'walk', 
+      'cat', 
+      'popcorn',
+    ]
 
     cardItems.forEach(item => {
       cardList.value.push({
