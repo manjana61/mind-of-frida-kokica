@@ -1,10 +1,18 @@
 @import "./base.css";
 
 #app {
-  max-width: 1280px;
   margin: 0 auto;
   text-align: center;
   font-weight: normal;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #000;
+  background-image: url('/images/background.jpg');
+  background-color: antiquewhite;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  height: 100vh;
 }
 
 a,

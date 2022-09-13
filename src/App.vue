@@ -139,21 +139,17 @@ export default {
 };
 </script>
 
-<style scoped>
-* { /* Mozda kasnije samo prepraviti h1 i h2 textalign center */
+<style scoped> /* u main.css #app odradjen jedan deo css-a */
+* {
   box-sizing: border-box;
-}
-
-#app { /* Ovde nastaviti i videti sta da radim... Videti da li u main.css sredjivati background image... */
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: #dde5f0;
-  background-image: url('/images/bg.jpg');
-  background-color: antiquewhite;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   text-align: center;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .game-board {
   display: grid;
   grid-template-columns: 100px 100px 100px 100px;
