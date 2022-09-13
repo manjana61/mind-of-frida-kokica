@@ -62,7 +62,10 @@ export default {
 }
 
 .card-side.is-back {
-  background-color: blue;
+  background-image: url('/images/poledjina.jpeg');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: white;
 }
 </style>
