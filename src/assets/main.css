@@ -7,13 +7,13 @@
   font-weight: normal;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Moram da odradim bolji font velicinu */
   color: rgb(187, 226, 239);
-  background-image: url('/images/background.jpg');
+  background-image: url('/images/background.png');
   background-color: antiquewhite;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
-  height: 100vh;
+  min-height: 100vh; /* za celu pozadinu bez belih linija (mozda height: 100%;) */
 }
 
 a,

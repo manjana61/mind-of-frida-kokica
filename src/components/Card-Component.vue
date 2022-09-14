@@ -1,8 +1,8 @@
 <template>
   <div class="card" @click="selectCard">
     <div v-if="visible" class="card-side is-front">
-      {{ value }} <!-- I ovo comment kad nastavim -->
-      <!-- <img :src="`/images/${value}.png`" :alt="value"> --> <!-- OVDE NASTAVITI ! ! ! -->
+      <!-- {{ value }} -->
+      <img :src="`/images/${value}.png`" :alt="value" class="items" />
       <!-- Guglao, zabrljao sam se bio, dosta vremena mi je otislo ovde. Sve sto je trebalo da uradim je bio bind na src i alt. -->
       <img v-if="matched" src="/images/matching-checkmark.png" class="matching" />
     </div>
@@ -68,7 +68,7 @@ export default {
 }
 
 .card-side.is-front {
-  background-image: url('/images/front-face-bg.png'); /* Ovo treba da uradim, da ubacim pozadinu ili slike. */
+  background-image: url('/images/front-face-bg.png');
   color: white;
 }
 
@@ -86,5 +86,14 @@ export default {
   bottom: 0;
   width: 30%;
   height: auto;
+}
+
+.items {
+  /* display: block;
+  min-height: 100%;
+  min-width: 100%; */
+  width: 95%;
+  height: 95%;
+  object-fit: contain;
 }
 </style>
