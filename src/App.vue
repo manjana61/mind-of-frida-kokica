@@ -1,6 +1,7 @@
 <template>
   <header>
     <h1>Mind of Frida Kokica</h1>
+    <!-- Ovde da vidim mozda za title img. Class da stavim sr-only na h1. -->
     <div class="game-board">
       <CardComponent
         v-for="(card, index) in cardList"
@@ -13,7 +14,9 @@
       />
     </div>
     <h2>{{ status }}</h2>
-    <button @click="restartGame">Restart Game</button>
+    <button @click="restartGame" class="button">
+      <img src="/images/restart1.png" alt="Restart Icon">
+       Restart Game</button>
   </header>
 </template>
 
@@ -167,5 +170,20 @@ body {
   grid-row-gap: 24px;
   justify-content: center;
   text-align: center;
+}
+
+.button {
+  background-color: #ede31a;
+  border: 1px solid blueviolet;
+  padding: 0.75rem 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  font-weight: bold;
+}
+
+.button img {
+  padding-right: 5px;
 }
 </style>

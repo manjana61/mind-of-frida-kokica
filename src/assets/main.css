@@ -6,7 +6,7 @@
   text-align: center;
   font-weight: normal;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Moram da odradim bolji font velicinu */
-  color: rgb(187, 226, 239);
+  color: /* rgb(187, 226, 239) */#210402;
   background-image: url('/images/background.png');
   background-color: antiquewhite;
   background-position: center;
