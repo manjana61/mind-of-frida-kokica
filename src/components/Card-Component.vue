@@ -1,12 +1,12 @@
 <template>
   <div class="card" :class="flippedStyles" @click="selectCard">
-    <div v-if="visible" class="card-side is-front">
+    <div class="card-side is-front"> <!-- googled the problem with blinking -->
       <!-- {{ value }} -->
       <img :src="`/images/${value}.png`" :alt="value" class="items" />
-      <!-- Guglao, zabrljao sam se bio, dosta vremena mi je otislo ovde. Sve sto je trebalo da uradim je bio bind na src i alt. -->
+      <!-- Guglao, Sve sto je trebalo da uradim je bio vbind na src i alt. -->
       <img v-if="matched" src="/images/matching-checkmark.png" class="matching" />
     </div>
-    <div v-else class="card-side is-back"></div>
+    <div class="card-side is-back"></div>
   </div>
 </template>
 
@@ -62,6 +62,12 @@ export default {
 <style scoped>
 .card {
   position: relative;
+  transition: 0.5s transform ease-in;
+  transform-style: preserve-3d; /* iskopah na guglu */
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
 }
 
 .card-side {
@@ -74,11 +80,13 @@ export default {
   align-items: center;
   justify-content: center;
   background-size: contain;
+  backface-visibility: hidden; /* iskopah na guglu, kako da pozadina elementa koji se rotira ostane sakrivena. */
 }
 
 .card-side.is-front {
   background-image: url('/images/front-face-bg.png');
   color: white;
+  transform: rotateY(180deg);
 }
 
 .card-side.is-back {
