@@ -2,17 +2,18 @@
   <header>
     <h1>Mind of Frida Kokica</h1>
     <!-- Ovde da vidim mozda za title img. Class da stavim sr-only na h1. -->
-    <div class="game-board">
+    
+    <TransitionGroup tag="div" class="game-board" name="shuffle-cards"> <!-- Iskopao na guglu za shuffle karata (TransitionGroup). -->
       <CardComponent
-        v-for="(card, index) in cardList"
-        :key="index"
+        v-for="card in cardList"
+        :key="`${card.value}-${card.variant}`"
         :matched="card.matched"
         :value="card.value"
         :visible="card.visible"
         :position="card.position"
         @select-card="flipCard"
       />
-    </div>
+    </TransitionGroup>
     <h2>{{ status }}</h2>
     <button @click="restartGame" class="button">
       <img src="/images/restart1.png" alt="Restart Icon">
@@ -50,12 +51,8 @@ export default {
       return remainingCards / 2
     })
 
-    let shuffleCards = () => {
-      cardList.value = _.shuffle(cardList.value)
-    }
-
     let restartGame = () => {
-      shuffleCards()
+      cardList.value = _.shuffle(cardList.value)
 
       cardList.value = cardList.value.map((card, index) => {
         return {
@@ -81,6 +78,7 @@ export default {
     cardItems.forEach(item => {
       cardList.value.push({
         value: item,
+        variant: 1,
         visible: false,
         position: null,
         matched: false,
@@ -88,6 +86,7 @@ export default {
 
       cardList.value.push({
         value: item,
+        variant: 2,
         visible: false,
         position: null,
         matched: false,
@@ -144,7 +143,6 @@ export default {
       flipCard,
       userSelection,
       status,
-      shuffleCards,
       restartGame,
     }
   },
@@ -185,5 +183,13 @@ body {
 
 .button img {
   padding-right: 5px;
+}
+
+h1 { /* ubacicu title img */
+  padding-bottom: 30px;
+}
+
+.shuffle-cards-move {
+  transition: transform 0.8s ease-in;
 }
 </style>
