@@ -175,7 +175,7 @@ body {
 .button {
   background-color: #ede31a;
   border: 1px solid blueviolet;
-  padding: 0.75rem 0.5rem;
+  padding: 0.5rem 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
