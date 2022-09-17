@@ -18,9 +18,14 @@
       />
     </TransitionGroup>
     <h2 class="status">{{ status }}</h2>
-    <button @click="restartGame" class="button">
-      <img src="/images/restart1.png" alt="Restart Icon">
-       Restart Game</button>
+    <button v-if="newPlayer" @click="startGame" class="button paw-button">
+      <img src="/images/paw-icon.png" alt="Paw Icon"/>
+       Start Game
+    </button>
+    <button v-else @click="restartGame" class="button">
+      <img src="/images/restart1.png" alt="Restart Icon"/>
+       Restart Game
+    </button>
   </header>
 </template>
 
@@ -40,6 +45,13 @@ export default {
   setup() {
     let cardList = ref([])
     let userSelection = ref([])
+    let newPlayer = ref(true)
+
+    let startGame = () => {
+      newPlayer.value = false
+
+      restartGame()
+    }
 
     let status = computed(() => {
       if (remainingPairs.value === 0) {
@@ -154,6 +166,8 @@ export default {
       userSelection,
       status,
       restartGame,
+      newPlayer,
+      startGame,
     }
   },
 };
@@ -184,6 +198,10 @@ body {
   font-family: 'Titillium Web', sans-serif;
 }
 
+.description p {
+  font-size: 1.1rem;
+}
+
 .description p:last-child {
   margin-bottom: 30px;
 }
@@ -194,20 +212,25 @@ body {
 
 .button {
   background-color: #123C69;
-  color: #AFD275;
+  color: /* #AFD275 */#66FCF1;
   border: 1px solid blueviolet;
-  padding: 0.5rem 0.5rem;
+  padding: 0.5rem 0.75rem;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
   font-weight: bold;
   font-family: 'Titillium Web', sans-serif;
+  font-size: 1.1rem;
+  border-radius: 10px;
 }
 
 .button img {
   padding-right: 5px;
 }
+
+/* .paw-button img {
+} */
 
 h1 { /* ubacicu title img */
   padding-bottom: 30px;

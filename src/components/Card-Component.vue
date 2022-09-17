@@ -74,7 +74,7 @@ export default {
   width: 100%;
   height: 100%;
   position: absolute;
-  border: 1px solid rgb(34, 34, 34);
+  border: 1px solid #123C69;
   border-radius: 10px;
   display: flex;
   align-items: center;
