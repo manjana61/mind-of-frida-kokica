@@ -2,7 +2,10 @@
   <header>
     <h1>Mind of Frida Kokica</h1>
     <!-- Ovde da vidim mozda za title img. Class da stavim sr-only na h1. -->
-    
+    <section class="description">
+      <p>Hello hoomans!</p>
+      <p>Welcome to my mind. Let's play!</p>
+    </section>
     <TransitionGroup tag="div" class="game-board" name="shuffle-cards"> <!-- Iskopao na guglu za shuffle karata (TransitionGroup). -->
       <CardComponent
         v-for="card in cardList"
@@ -14,7 +17,7 @@
         @select-card="flipCard"
       />
     </TransitionGroup>
-    <h2>{{ status }}</h2>
+    <h2 class="status">{{ status }}</h2>
     <button @click="restartGame" class="button">
       <img src="/images/restart1.png" alt="Restart Icon">
        Restart Game</button>
@@ -177,8 +180,21 @@ body {
   text-align: center;
 }
 
+.description {
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.description p:last-child {
+  margin-bottom: 30px;
+}
+
+.status {
+  font-family: 'Titillium Web', sans-serif;
+}
+
 .button {
-  background-color: #ede31a;
+  background-color: #123C69;
+  color: #AFD275;
   border: 1px solid blueviolet;
   padding: 0.5rem 0.5rem;
   display: flex;
@@ -186,6 +202,7 @@ body {
   align-items: center;
   margin: 0 auto;
   font-weight: bold;
+  font-family: 'Titillium Web', sans-serif;
 }
 
 .button img {
