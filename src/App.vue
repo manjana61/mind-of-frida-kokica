@@ -8,7 +8,8 @@
     </section>
     <button v-if="newPlayer" @click="startGame" class="button paw-button">
       <img src="/images/paw-icon.png" alt="Paw Icon"/>
-       Start Game
+      <!-- <img src="/images/paw-black-icon.png" alt="Paw Dark Icon" class="paw-dark-icon"> -->
+      Start Game
     </button>
     <button v-else @click="restartGame" class="button">
       <img src="/images/restart1.png" alt="Restart Icon"/>
@@ -26,7 +27,9 @@
       />
     </TransitionGroup>
     <h2 class="status">{{ status }}</h2>
-    
+    <footer>
+      Design by <a href="https://www.instagram.com/kontigentna/?hl=en" target="_blank">kontigentna</a>
+    </footer>
   </header>
 </template>
 
@@ -210,6 +213,18 @@ body {
 
 .status {
   font-family: 'Titillium Web', sans-serif;
+  text-transform: uppercase;
+}
+
+footer a {
+  text-decoration: none;
+  font-family: 'Gloria Hallelujah', cursive;
+  color: blueviolet;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
 
 .button {
@@ -225,10 +240,49 @@ body {
   font-family: 'Titillium Web', sans-serif;
   font-size: 1.1rem;
   border-radius: 10px;
+  transition: 0.2s all ease-in;
 }
+
+.button:hover {
+  background-color: transparent;
+  color: #123C69;
+  cursor: pointer;
+}
+
+/* .button:hover .paw-dark-icon {
+  opacity: 1;
+}
+
+.button .paw-dark-icon {
+  position: absolute;
+  left: -6px;
+  opacity: 0;
+}
+
+.button:hover .paw-icon {
+  opacity: 0;
+}
+
+.button .paw-icon {
+  position: absolute;
+  left: -6px;
+  opacity: 1;
+}
+
+.button-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+.button-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+} */
 
 .button img {
   padding-right: 5px;
+  /* transition: 0.2s opacity ease-in; */
 }
 
 /* .paw-button img {
