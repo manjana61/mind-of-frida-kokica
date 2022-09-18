@@ -6,6 +6,14 @@
       <p>Hello hoomans!</p>
       <p>Welcome to my mind. Let's play!</p>
     </section>
+    <button v-if="newPlayer" @click="startGame" class="button paw-button">
+      <img src="/images/paw-icon.png" alt="Paw Icon"/>
+       Start Game
+    </button>
+    <button v-else @click="restartGame" class="button">
+      <img src="/images/restart1.png" alt="Restart Icon"/>
+       Restart Game
+    </button>
     <TransitionGroup tag="div" class="game-board" name="shuffle-cards"> <!-- Iskopao na guglu za shuffle karata (TransitionGroup). -->
       <CardComponent
         v-for="card in cardList"
@@ -18,14 +26,7 @@
       />
     </TransitionGroup>
     <h2 class="status">{{ status }}</h2>
-    <button v-if="newPlayer" @click="startGame" class="button paw-button">
-      <img src="/images/paw-icon.png" alt="Paw Icon"/>
-       Start Game
-    </button>
-    <button v-else @click="restartGame" class="button">
-      <img src="/images/restart1.png" alt="Restart Icon"/>
-       Restart Game
-    </button>
+    
   </header>
 </template>
 
@@ -54,17 +55,17 @@ export default {
     }
 
     let status = computed(() => {
-      if (remainingPairs.value === 0) {
+      if (matchesFound.value === 8) {
         return 'YOU WIN !'
       } else {
-        return `Remaining Pairs : ${remainingPairs.value}`
+        return `Matches Found: ${matchesFound.value}`
       }
     })
 
-    let remainingPairs = computed (() => {
-      let remainingCards = cardList.value.filter(card => card.matched === false).length
+    let matchesFound = computed (() => {
+      let matchedCards = cardList.value.filter(card => card.matched === true).length
 
-      return remainingCards / 2
+      return matchedCards / 2
     })
 
     let restartGame = () => {
@@ -131,8 +132,8 @@ export default {
       }
     }
 
-    watch(remainingPairs, currentValue => {
-      if (currentValue === 0) {
+    watch(matchesFound, currentValue => {
+      if (currentValue === 8) {
         launchConfetti()
       }
     })
@@ -187,11 +188,12 @@ body {
 .game-board {
   display: grid;
   grid-template-columns: repeat(4, 120px);
-  grid-column-gap: 24px;
+  grid-column-gap: 12px;
   grid-template-rows: repeat(4, 120px);
-  grid-row-gap: 24px;
+  grid-row-gap: 12px;
   justify-content: center;
   text-align: center;
+  margin: 20px 0;
 }
 
 .description {
