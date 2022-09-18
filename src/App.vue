@@ -244,8 +244,8 @@ footer a:hover {
 }
 
 .button:hover {
-  background-color: transparent;
-  color: #123C69;
+  background-color: rgba(18, 60, 105, 0.7);
+  /* color: #123C69; */
   cursor: pointer;
 }
 
