@@ -1,5 +1,6 @@
 <template>
   <header>
+    <!-- <LoadingImage v-if="!show" /> -->
     <h1>Mind of Frida Kokica</h1>
     <!-- Ovde da vidim mozda za title img. Class da stavim sr-only na h1. -->
     <section class="description">
@@ -38,13 +39,15 @@ import _ from 'lodash'
 import { ref, watch, computed } from 'vue'
 import { launchConfetti } from './utilities/confetti'
 import CardComponent from "./components/Card-component.vue";
+/* import LoadingImage from "./components/LoadingImage.vue"; */
 
 export default {
   name: "App",
 
   components: {
     CardComponent,
-  },
+    /* LoadingImage, */
+},
 
   setup() {
     let cardList = ref([])
@@ -174,7 +177,7 @@ export default {
       startGame,
     }
   },
-};
+}
 </script>
 
 <style scoped> /* u main.css #app odradjen jedan deo css-a. Nisam uspeo drugacije da ubacim background image za pozadinu. */
@@ -244,8 +247,8 @@ footer a:hover {
 }
 
 .button:hover {
-  background-color: rgba(18, 60, 105, 0.7);
-  /* color: #123C69; */
+  background-color: /* rgba(18, 60, 105, 0.7); */ rgba(239, 148, 192, 0.7);
+  color: #123C69;
   cursor: pointer;
 }
 
