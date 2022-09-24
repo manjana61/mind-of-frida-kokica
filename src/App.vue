@@ -1,12 +1,12 @@
 <template>
-  <header>
+  <div class="wrapper">
     <!-- <LoadingImage v-if="!show" /> -->
     <h1>Mind of Frida Kokica</h1>
     <!-- Ovde da vidim mozda za title img. Class da stavim sr-only na h1. -->
-    <section class="description">
+    <div class="description">
       <p>Hello hoomans!</p>
       <p>Welcome to my mind. Let's play!</p>
-    </section>
+    </div>
     <button v-if="newPlayer" @click="startGame" class="button paw-button">
       <img src="/images/paw-icon.png" alt="Paw Icon"/>
       <!-- <img src="/images/paw-black-icon.png" alt="Paw Dark Icon" class="paw-dark-icon"> -->
@@ -31,7 +31,7 @@
     <footer>
       Design by <a href="https://www.instagram.com/kontigentna/?hl=en" target="_blank">kontigentna</a>
     </footer>
-  </header>
+  </div>
 </template>
 
 <script>
@@ -297,5 +297,45 @@ h1 { /* ubacicu title img */
 
 .shuffle-cards-move {
   transition: transform 0.8s ease-in;
+}
+
+/* KRECEM ZA tablete */
+
+@media (max-width: 1024px) {
+ .game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-column-gap: 10px;
+  grid-template-rows: repeat(4, 100px);
+  grid-row-gap: 10px;
+  justify-content: center;
+  text-align: center;
+  margin: 20px 0;
+}
+
+ h1 {
+  font-size: 25px;
+  padding-bottom: 25px;
+}
+
+.button {
+  font-size: 0.9rem;
+}
+
+ .description p {
+  font-size: 1rem;
+}
+
+ .description p:last-child {
+  margin-bottom: 25px;
+}
+
+ footer {
+  font-size: 12px;
+ }
+
+ .status {
+  font-size: 20px;
+ }
 }
 </style>
