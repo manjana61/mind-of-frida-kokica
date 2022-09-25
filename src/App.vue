@@ -301,7 +301,7 @@ h1 { /* ubacicu title img */
 
 /* KRECEM ZA tablete */
 
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
  .game-board {
   display: grid;
   grid-template-columns: repeat(4, 100px);
@@ -337,5 +337,46 @@ h1 { /* ubacicu title img */
  .status {
   font-size: 20px;
  }
+}
+
+/* KRECEM ZA fonove */
+
+@media (max-width: 736px) {
+  .game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    grid-column-gap: 8px;
+    grid-template-rows: repeat(4, 80px);
+    grid-row-gap: 8px;
+    justify-content: center;
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  h1 {
+    font-size: 22px;
+    padding-bottom: 18px;
+  }
+
+  .button {
+    font-size: 0.7rem;
+  }
+
+  .description p {
+    font-size: 0.8rem;
+  }
+
+  .description p:last-child {
+    margin-bottom: 20px;
+  }
+
+  footer {
+    font-size: 11px;
+  }
+
+  .status {
+    font-size: 18px;
+  }
+
 }
 </style>
