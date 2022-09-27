@@ -66,6 +66,10 @@ export default {
   transform-style: preserve-3d; /* iskopah na guglu */
 }
 
+.card:hover {
+  cursor: pointer;
+}
+
 .card.is-flipped {
   transform: rotateY(180deg);
 }
