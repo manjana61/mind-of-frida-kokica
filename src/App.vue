@@ -38,7 +38,7 @@
 import _ from 'lodash'
 import { ref, watch, computed } from 'vue'
 import { launchConfetti } from './utilities/confetti'
-import CardComponent from "./components/Card-component.vue";
+import CardComponent from "./components/Card-Component.vue";
 /* import LoadingImage from "./components/LoadingImage.vue"; */
 
 export default {
