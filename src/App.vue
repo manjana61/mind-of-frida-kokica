@@ -379,4 +379,44 @@ h1 { /* ubacicu title img */
   }
 
 }
+
+/* SMALL PHONES */
+
+@media (max-width: 375px) {
+  .game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 60px);
+    grid-column-gap: 6px;
+    grid-template-rows: repeat(4, 60px);
+    grid-row-gap: 6px;
+    justify-content: center;
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  h1 {
+    font-size: 17px;
+    padding-bottom: 14px;
+  }
+
+  .button {
+    font-size: 0.6rem;
+  }
+
+  .description p {
+    font-size: 0.7rem;
+  }
+
+  .description p:last-child {
+    margin-bottom: 15px;
+  }
+
+  footer {
+    font-size: 9px;
+  }
+
+  .status {
+    font-size: 15px;
+  }
+}
 </style>
